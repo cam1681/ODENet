@@ -1,0 +1,3 @@
+random, half cycle
+fixed point, second one
+lorentz

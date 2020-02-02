@@ -1,0 +1,145 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4860,        137]
+NotebookOptionsPosition[      4424,        120]
+NotebookOutlinePosition[      4780,        136]
+CellTagsIndexPosition[      4737,        133]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"change", " ", "to", " ", "NotebookDirctory"}], "+", 
+    RowBox[{"matrix", " ", "directory"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"mydir", " ", "=", " ", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<matrix\>\""}], 
+       "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"SetDirectory", "[", "mydir", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"files", "=", 
+     RowBox[{"FileNames", "[", 
+      RowBox[{"\"\<*.json\>\"", ",", 
+       RowBox[{"Directory", "[", "]"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Length", "[", "files", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"datas", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Import", "[", "#", "]"}], "&"}], "/@", "files"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"matrix", "=", 
+     RowBox[{"datas", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"z", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"bias", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"Dot", "[", 
+       RowBox[{"z", ",", 
+        RowBox[{"\"\<ma\>\"", "/.", "matrix"}]}], "]"}], "*", 
+      RowBox[{"Dot", "[", 
+       RowBox[{"z", ",", 
+        RowBox[{"\"\<mb\>\"", "/.", "matrix"}]}], "]"}]}], "+", 
+     RowBox[{"Dot", "[", 
+      RowBox[{"z", ",", 
+       RowBox[{"\"\<mc\>\"", "/.", "matrix"}]}], "]"}], "+", "bias"}], "//", 
+    "Expand"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.768054320557042*^9, 3.768054345459237*^9}, {
+   3.768054394829322*^9, 3.7680544260830307`*^9}, {3.7680544615152082`*^9, 
+   3.7680545324062214`*^9}, {3.768054665487339*^9, 3.76805468036491*^9}, {
+   3.76805472121294*^9, 3.768054771795892*^9}, {3.768054817340259*^9, 
+   3.768054837611163*^9}, {3.7680548732434907`*^9, 3.7680549033153667`*^9}, {
+   3.768055041500458*^9, 3.768055110683118*^9}, {3.768055259885044*^9, 
+   3.7680552609953327`*^9}, {3.7680554310850296`*^9, 
+   3.7680554673953695`*^9}, {3.7680555210755*^9, 3.768055618525245*^9}, {
+   3.7680558122607536`*^9, 3.7680559142043552`*^9}, {3.76810322166864*^9, 
+   3.768103236594541*^9}, {3.768103324131035*^9, 3.768103363903284*^9}, {
+   3.7681034486504917`*^9, 3.768103462572435*^9}, {3.7681035200708923`*^9, 
+   3.768103568311385*^9}, {3.768103608161954*^9, 3.7681037043925333`*^9}, 
+   3.768103912398335*^9},
+ CellLabel->
+  "In[118]:=",ExpressionUUID->"6217ba8f-de43-4ca9-a0b3-b6371bf31d3f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"1.0192804336547852`", " ", "x"}], "-", 
+    RowBox[{"0.0005122138422692865`", " ", 
+     SuperscriptBox["x", "2"]}], "+", 
+    RowBox[{"0.021214958280324936`", " ", "y"}], "-", 
+    RowBox[{"0.049630067798459354`", " ", "x", " ", "y"}], "-", 
+    RowBox[{"0.0014436412901098344`", " ", 
+     SuperscriptBox["y", "2"]}]}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "0.009201612323522568`"}], " ", "x"}], "+", 
+    RowBox[{"0.0002298064905999972`", " ", 
+     SuperscriptBox["x", "2"]}], "-", 
+    RowBox[{"1.015811800956726`", " ", "y"}], "+", 
+    RowBox[{"0.02973343624866609`", " ", "x", " ", "y"}], "+", 
+    RowBox[{"0.0008030109452641931`", " ", 
+     SuperscriptBox["y", "2"]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7681035688026333`*^9, {3.7681036131604156`*^9, 3.7681036553430653`*^9}, 
+   3.768103913059664*^9},
+ CellLabel->
+  "Out[126]=",ExpressionUUID->"b0c23208-e485-48c3-a62d-0f20575bb3eb"]
+}, Open  ]]
+},
+WindowSize->{759, 697},
+WindowMargins->{{Automatic, 136}, {-64, Automatic}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2841, 69, 262, "Input",ExpressionUUID->"6217ba8f-de43-4ca9-a0b3-b6371bf31d3f"],
+Cell[3424, 93, 984, 24, 60, "Output",ExpressionUUID->"b0c23208-e485-48c3-a62d-0f20575bb3eb"]
+}, Open  ]]
+}
+]
+*)
+
